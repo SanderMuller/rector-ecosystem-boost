@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "oss-boost/conventions-schema.json",
+  "title": "OSS-contribution + ecosystem conventions",
+  "description": "Per-repo slot vocabulary referenced by the oss-contribution skill and the ecosystem/verification guidelines. A consumer declares these in boost.php via ->withConventions([...]); boost inlines them into skill/guideline bodies at sync time. Prototype 2026-06-13 — slot names not yet frozen.",
+  "type": "object",
+  "properties": {
+    "contribution": {
+      "type": "object",
+      "description": "Foreign-vs-home and PR-flow facts for this repo.",
+      "properties": {
+        "home": {
+          "type": "boolean",
+          "description": "true = you own/maintain this repo (use the owner pull-requests flow). false = foreign (oss-contribution skill applies)."
+        },
+        "base_branch": {
+          "type": "string",
+          "description": "Default base branch for PRs, e.g. 'main', 'develop'."
+        },
+        "issue_required": {
+          "type": "boolean",
+          "description": "Does the project require an issue before a PR?"
+        },
+        "pr_title_format": {
+          "type": ["string", "null"],
+          "description": "Title template if the project enforces one (e.g. '[KEY] {short_title}'); null = none."
+        },
+        "branch_name_pattern": {
+          "type": ["string", "null"],
+          "description": "Enforced branch-name pattern, or null if free-form (rector ecosystem: null)."
+        }
+      }
+    },
+    "gate": {
+      "type": "object",
+      "description": "Definition-of-done commands.",
+      "properties": {
+        "command": {
+          "type": "string",
+          "description": "OPTIONAL aggregate quality gate, e.g. 'composer complete-check' (= ECS + PHPStan + phpunit). Some repos (e.g. TomasVotruba/class-leak) have NO aggregate command and no 'test' script — then leave this null and rely on verification.per_change / verification.at_completion, which are the canonical gate."
+        },
+        "fix_command": {
+          "type": "string",
+          "description": "Auto-fixer, e.g. 'composer fix-cs'."
+        }
+      }
+    },
+    "verification": {
+      "type": "object",
+      "description": "Commands the verification-before-completion guideline runs, by tier.",
+      "properties": {
+        "per_change": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Fast checks run after each edit."
+        },
+        "at_completion": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Slow checks run once before hand-off."
+        }
+      }
+    },
+    "package": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": ["rule-package", "tool", "library", "application"],
+          "description": "'rule-package' = rules/ + rules-tests/ (Rector) or src/Rules/ + tests/Rules/ (PHPStan)."
+        }
+      }
+    },
+    "php": {
+      "type": "object",
+      "properties": {
+        "min": { "type": "string", "description": "Minimum PHP version, e.g. '8.3'." }
+      }
+    },
+    "docs": {
+      "type": "object",
+      "properties": {
+        "path": {
+          "type": "string",
+          "description": "Where user docs live, e.g. 'build/target-repository/docs' or 'README.md'."
+        }
+      }
+    },
+    "rule": {
+      "type": "object",
+      "properties": {
+        "identifier_scheme": {
+          "type": ["string", "null"],
+          "description": "Rule-identifier scheme, e.g. 'symplify.<camelName>', or null."
+        }
+      }
+    }
+  },
+  "examples": [
+    {
+      "_repo": "rectorphp/rector-src",
+      "contribution": { "home": false, "base_branch": "main", "issue_required": false, "pr_title_format": null, "branch_name_pattern": null },
+      "gate": { "command": "composer complete-check", "fix_command": "composer fix-cs" },
+      "verification": {
+        "per_change": ["vendor/bin/ecs check --ansi"],
+        "at_completion": ["composer complete-check"]
+      },
+      "package": { "kind": "tool" },
+      "php": { "min": "8.3" },
+      "docs": { "path": "build/target-repository/docs" },
+      "rule": { "identifier_scheme": null }
+    }
+  ]
+}

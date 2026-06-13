@@ -1,0 +1,4 @@
+# Capability tags for guidelines in this directory (boost-core >= 0.6.0).
+# Filename -> space-delimited tags; ships only when tags ⊆ project withTags().
+# Unlisted guidelines are untagged and ship everywhere.
+rector-ecosystem-house-style.md: "php"
