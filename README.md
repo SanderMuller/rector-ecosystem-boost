@@ -10,15 +10,25 @@ catalog: pure Markdown, no runtime code.
 
 ## What it ships
 
-- **`oss-contribution` skill** — the foreign-repo contribution playbook: read the target's rules
-  first, run its gate, draft maintainer-facing prose for a human (never post it as the agent), one PR
-  at a time, scope ambition to trust.
-- **`verification-before-completion` guideline** — evidence-before-claims, with doc-only and
-  intended-red (failing-test) carve-outs.
-- **`rector-ecosystem-house-style` guideline** — the shared rectorphp / symplify / TomasVotruba
-  conventions (php-tagged).
-- **`conventions-schema.json`** — per-repo slots (gate command, base branch, package kind, …) the
-  skill resolves at sync time.
+**Skills** (loaded on demand):
+- **`oss-contribution`** — the foreign-repo contribution playbook: read the target's rules first, run
+  its gate, draft maintainer-facing prose for a human (never post it as the agent), one PR at a time,
+  scope ambition to trust.
+- **`rule-authoring`** — the canonical shape for an ecosystem rule (Rector / PHPStan / symplify):
+  mirror-path namespace, `final` + framework base, ctor injection, bail-early, the test + fixture
+  conventions, no value-object tests. Tuned per repo by the `rule.*` conventions.
+
+**Guidelines** (always loaded):
+- **`rector-ecosystem-house-style`** — the shared rectorphp / symplify / TomasVotruba coding standards
+  (final classes, strict types, ReflectionProvider-not-runtime, no setters, …); php-tagged.
+- **`pr-contribution`** — the ecosystem's PR conventions + anti-slop rules (one feature/PR, tests
+  required, lead-with-a-failing-test, no coverage/Docker padding, why-not-what descriptions); php-tagged.
+- **`verification-before-completion`** — evidence-before-claims, with doc-only and intended-red
+  (failing-test) carve-outs.
+
+**`conventions-schema.json`** — per-repo slots (gate command, base branch, package kind, PHP floor,
+docs path, rule framework / test-case base / identifier scheme) the skills and guidelines resolve at
+sync time, so one catalog tunes itself per repo.
 
 ## Install
 

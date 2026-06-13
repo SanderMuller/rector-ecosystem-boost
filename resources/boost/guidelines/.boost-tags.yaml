@@ -2,3 +2,4 @@
 # Filename -> space-delimited tags; ships only when tags ⊆ project withTags().
 # Unlisted guidelines are untagged and ship everywhere.
 rector-ecosystem-house-style.md: "php"
+pr-contribution.md: "php"

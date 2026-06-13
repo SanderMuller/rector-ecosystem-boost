@@ -88,7 +88,17 @@
     },
     "rule": {
       "type": "object",
+      "description": "Rule-authoring conventions, consumed by the rule-authoring skill.",
       "properties": {
+        "framework": {
+          "type": ["string", "null"],
+          "enum": ["rector", "phpstan", "symplify-phpstan", null],
+          "description": "Which rule framework this repo authors: 'rector' (AbstractRector, rules/ + rules-tests/), 'phpstan' / 'symplify-phpstan' (Rule, src/Rules/ + tests/Rules/), or null to auto-detect."
+        },
+        "test_case_base": {
+          "type": ["string", "null"],
+          "description": "Test base class for rules, e.g. 'AbstractRectorTestCase' or 'RuleTestCase'."
+        },
         "identifier_scheme": {
           "type": ["string", "null"],
           "description": "Rule-identifier scheme, e.g. 'symplify.<camelName>', or null."
@@ -108,7 +118,7 @@
       "package": { "kind": "tool" },
       "php": { "min": "8.3" },
       "docs": { "path": "build/target-repository/docs" },
-      "rule": { "identifier_scheme": null }
+      "rule": { "framework": "rector", "test_case_base": "AbstractRectorTestCase", "identifier_scheme": null }
     }
   ]
 }
