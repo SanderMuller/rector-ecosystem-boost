@@ -1,12 +1,12 @@
-# oss-contribution-boost
+# rector-ecosystem-boost
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/sandermuller/oss-contribution-boost.svg?style=flat-square)](https://packagist.org/packages/sandermuller/oss-contribution-boost)
-[![Total Downloads](https://img.shields.io/packagist/dt/sandermuller/oss-contribution-boost.svg?style=flat-square)](https://packagist.org/packages/sandermuller/oss-contribution-boost)
-[![License](https://img.shields.io/packagist/l/sandermuller/oss-contribution-boost.svg?style=flat-square)](LICENSE)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/sandermuller/rector-ecosystem-boost.svg?style=flat-square)](https://packagist.org/packages/sandermuller/rector-ecosystem-boost)
+[![Total Downloads](https://img.shields.io/packagist/dt/sandermuller/rector-ecosystem-boost.svg?style=flat-square)](https://packagist.org/packages/sandermuller/rector-ecosystem-boost)
+[![License](https://img.shields.io/packagist/l/sandermuller/rector-ecosystem-boost.svg?style=flat-square)](LICENSE)
 
-Agent skills and guidelines for contributing to repositories you do **not** own — open source, an
-upstream you forked, another team's repo. A Composer-distributed [boost](https://github.com/sandermuller/boost-core)
-catalog: pure Markdown, no runtime code.
+Agent skills, coding standards, and PR conventions for the **rector / symplify / TomasVotruba**
+ecosystem — and for contributing to repos you don't own. A Composer-distributed
+[boost](https://github.com/sandermuller/boost-core) catalog: pure-Markdown, no runtime code.
 
 ## What it ships
 
@@ -33,7 +33,7 @@ sync time, so one catalog tunes itself per repo.
 ## Install
 
 ```bash
-composer require --dev sandermuller/oss-contribution-boost
+composer require --dev sandermuller/rector-ecosystem-boost
 ```
 
 Allowlist it and sync with a boost engine
@@ -44,7 +44,7 @@ Allowlist it and sync with a boost engine
 // boost.php or .config/boost.php
 return BoostConfig::configure()
     ->withAgents([Agent::CLAUDE_CODE, Agent::CODEX, Agent::CURSOR])
-    ->withAllowedVendors(['sandermuller/oss-contribution-boost'])
+    ->withAllowedVendors(['sandermuller/rector-ecosystem-boost'])
     ->withTags(['github', 'php'])
     ->withConventions([/* gate.command, contribution.base_branch, … */]);
 ```

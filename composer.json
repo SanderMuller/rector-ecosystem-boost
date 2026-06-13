@@ -1,14 +1,14 @@
 {
-    "name": "sandermuller/oss-contribution-boost",
-    "description": "Agent skills and guidelines for contributing to repositories you do not own (boost catalog).",
+    "name": "sandermuller/rector-ecosystem-boost",
+    "description": "Agent skills, coding standards, and PR conventions for the rector / symplify / TomasVotruba ecosystem (boost catalog).",
     "keywords": [
         "sandermuller",
-        "oss-contribution-boost",
+        "rector-ecosystem-boost",
         "ai",
         "skills",
         "boost"
     ],
-    "homepage": "https://github.com/sandermuller/oss-contribution-boost",
+    "homepage": "https://github.com/sandermuller/rector-ecosystem-boost",
     "license": "MIT",
     "type": "library",
     "authors": [
