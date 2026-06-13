@@ -35,5 +35,9 @@ return BoostConfig::configure()
         'sandermuller/package-boost-laravel',
         'sandermuller/package-boost-php',
     ])
-    ->withTags(['php', 'github'])
+    ->withTags([
+        'php',
+        'github',
+        'release-automation',
+    ])
     ->withDisabledEmitters([]);

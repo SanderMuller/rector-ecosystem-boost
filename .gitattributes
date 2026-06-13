@@ -7,7 +7,9 @@
 
 # >>> package-boost (managed) >>>
 .agents/ export-ignore
+.cache/pint/ export-ignore
 .claude/ export-ignore
+.claude/settings.local.json export-ignore
 .config/ export-ignore
 .config/boost.php export-ignore
 .editorconfig export-ignore

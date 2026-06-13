@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "oss-boost/conventions-schema.json",
+  "$id": "rector-ecosystem-boost/conventions-schema.json",
   "title": "OSS-contribution + ecosystem conventions",
   "description": "Per-repo slot vocabulary referenced by the oss-contribution skill and the ecosystem/verification guidelines. A consumer declares these in boost.php via ->withConventions([...]); boost inlines them into skill/guideline bodies at sync time. OMIT any optional slot you don't use — an omitted slot renders the conv-token's fallback text, whereas a slot set to null inlines the literal 'null'. Prototype 2026-06-13 — slot names not yet frozen.",
   "type": "object",
@@ -37,7 +37,7 @@
       "properties": {
         "command": {
           "type": "string",
-          "description": "OPTIONAL aggregate quality gate, e.g. 'composer complete-check' (= ECS + PHPStan + phpunit). Some repos (e.g. TomasVotruba/class-leak) have NO aggregate command and no 'test' script — then leave this null and rely on verification.per_change / verification.at_completion, which are the canonical gate."
+          "description": "OPTIONAL aggregate quality gate, e.g. 'composer complete-check' (= ECS + PHPStan + phpunit). Some repos (e.g. TomasVotruba/class-leak) have NO aggregate command and no 'test' script — then omit this field and rely on verification.per_change / verification.at_completion, which are the canonical gate."
         },
         "fix_command": {
           "type": "string",
