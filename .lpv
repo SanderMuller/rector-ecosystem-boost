@@ -1,0 +1,13 @@
+.editorconfig
+.gitattributes
+.github/
+.gitignore
+.ai/
+.claude/
+.cache/
+CHANGELOG.md
+composer.lock
+.config/
+pint.json
+AGENTS.md
+CLAUDE.md

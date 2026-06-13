@@ -1,0 +1,53 @@
+{
+    "name": "sandermuller/oss-contribution-boost",
+    "description": "Agent skills and guidelines for contributing to repositories you do not own (boost catalog).",
+    "keywords": [
+        "sandermuller",
+        "oss-contribution-boost",
+        "ai",
+        "skills",
+        "boost"
+    ],
+    "homepage": "https://github.com/sandermuller/oss-contribution-boost",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Sander Muller",
+            "email": "github@scode.nl",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.3",
+        "sandermuller/boost-core": "^1.1"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.29",
+        "sandermuller/boost-skills": "^2.5",
+        "stolt/lean-package-validator": "^6.0"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "SanderMuller\\BoostCore\\Scripts\\BoostAutoSync::run"
+        ],
+        "post-update-cmd": [
+            "SanderMuller\\BoostCore\\Scripts\\BoostAutoSync::run"
+        ],
+        "format": "vendor/bin/pint",
+        "validate-gitattributes": "vendor/bin/lean-package-validator validate",
+        "qa": [
+            "@format",
+            "@validate-gitattributes"
+        ],
+        "qa-check": [
+            "vendor/bin/pint --test",
+            "@validate-gitattributes"
+        ]
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
