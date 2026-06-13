@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "oss-boost/conventions-schema.json",
   "title": "OSS-contribution + ecosystem conventions",
-  "description": "Per-repo slot vocabulary referenced by the oss-contribution skill and the ecosystem/verification guidelines. A consumer declares these in boost.php via ->withConventions([...]); boost inlines them into skill/guideline bodies at sync time. Prototype 2026-06-13 — slot names not yet frozen.",
+  "description": "Per-repo slot vocabulary referenced by the oss-contribution skill and the ecosystem/verification guidelines. A consumer declares these in boost.php via ->withConventions([...]); boost inlines them into skill/guideline bodies at sync time. OMIT any optional slot you don't use — an omitted slot renders the conv-token's fallback text, whereas a slot set to null inlines the literal 'null'. Prototype 2026-06-13 — slot names not yet frozen.",
   "type": "object",
   "properties": {
     "contribution": {
@@ -109,7 +109,7 @@
   "examples": [
     {
       "_repo": "rectorphp/rector-src",
-      "contribution": { "home": false, "base_branch": "main", "issue_required": false, "pr_title_format": null, "branch_name_pattern": null },
+      "contribution": { "home": false, "base_branch": "main", "issue_required": false },
       "gate": { "command": "composer complete-check", "fix_command": "composer fix-cs" },
       "verification": {
         "per_change": ["vendor/bin/ecs check --ansi"],
@@ -118,7 +118,7 @@
       "package": { "kind": "tool" },
       "php": { "min": "8.3" },
       "docs": { "path": "build/target-repository/docs" },
-      "rule": { "framework": "rector", "test_case_base": "AbstractRectorTestCase", "identifier_scheme": null }
+      "rule": { "framework": "rector", "test_case_base": "AbstractRectorTestCase" }
     }
   ]
 }
