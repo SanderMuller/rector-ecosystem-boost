@@ -10,7 +10,7 @@ always-loaded baseline that applies either way.)
 - **Lead with a failing test where it fits** — the ecosystem's preferred way to report a bug. The
   failing test *is* the report; a red gate on that new test is success (intended-red), not a defect to
   "fix" away.
-- **Run the gate before opening:** <!--boost:conv path="gate.command" mode="inline" fallback="the project's quality gate (composer complete-check), or its components: ECS + PHPStan + the suite"-->.
+- **Run the gate before opening:** <!--boost:conv path="gate.command" mode="inline" fallback="the project's aggregate quality gate if it has one (e.g. composer complete-check), otherwise its components — ECS + PHPStan + the test suite"-->.
   That's the definition of done — see the `verification-before-completion` guideline.
 - **Don't pad.** No coverage-chasing, no Docker-to-everything, no unit tests for getters/setters or
   value objects. These read as AI slop, waste maintainer attention, and the ecosystem's tools and

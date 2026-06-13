@@ -39,5 +39,5 @@ A rule without a test is not done. Mirror the rule path under the test directory
 
 ## Before finishing
 
-Run the gate: <!--boost:conv path="gate.command" mode="inline" fallback="the project's quality gate (composer complete-check), or its components: ECS + PHPStan + the rule's test"-->.
+Run the gate: <!--boost:conv path="gate.command" mode="inline" fallback="the project's aggregate gate if it has one (e.g. composer complete-check), otherwise ECS + PHPStan + the rule's test"-->.
 Document the rule where the repo documents rules (<!--boost:conv path="docs.path" mode="inline" fallback="README or the docs directory"-->).

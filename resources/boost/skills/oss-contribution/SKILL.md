@@ -61,7 +61,7 @@ lower the format, not the honesty.
    "contribute a failing test" mode (many do), lead with that.
 3. **Branch** from the target's default base (from conventions; no enforced name unless the target
    documents one).
-4. **Run the gate** — <!--boost:conv path="gate.command" mode="inline" fallback="the resolved quality gate (composer complete-check / npm test), or its components check-cs + phpstan + phpunit where there is no aggregate"-->. This is the
+4. **Run the gate** — <!--boost:conv path="gate.command" mode="inline" fallback="the project's aggregate quality gate if it has one (e.g. composer complete-check / npm test), otherwise its components (check-cs + phpstan + phpunit)"-->. This is the
    definition of done. Follow the `verification-before-completion` guideline (doc-only and
    intended-red carve-outs included). **Intended-red:** if the contribution is a *failing test* (a bug
    demonstration — a mode rector and others explicitly invite), the new test is *supposed* to fail;
