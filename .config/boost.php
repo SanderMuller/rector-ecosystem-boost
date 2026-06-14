@@ -39,5 +39,7 @@ return BoostConfig::configure()
         'php',
         'github',
         'release-automation',
+        // this package authors boost skills/guidelines — pulls skill-authoring (+ writing-file-emitter)
+        'boost-extension',
     ])
     ->withDisabledEmitters([]);
