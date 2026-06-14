@@ -22,6 +22,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   sentence. It named an external repo that can drift and didn't accurately describe the list it was
   attached to (these are human-judgment conventions, not gate-checkable). Enforcement nuance already
   lives, repo-aware, in the house-style guideline's enforcement note.
+- **`rector-ecosystem-house-style` guideline** — dropped the dated provenance line ("Generalised from
+  the two existing CLAUDE.md files …, 2026-06-13"); a reader doesn't act on it and it dates the file.
 
 ## v1.0.0 - 2026-06-14
 

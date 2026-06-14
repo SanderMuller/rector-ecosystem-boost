@@ -4,8 +4,7 @@ Shared conventions across `rectorphp/*`, `symplify/*`, and `TomasVotruba/*`. The
 author's house style on one tooling spine (`rector/rector`, `phpstan/phpstan`,
 `symplify/phpstan-rules`, `symplify/coding-standard`, `tomasvotruba/unused-public`,
 `rector/type-perfect`). Per-repo specifics (exact gate command, package kind, min PHP, docs path) come
-from the project conventions slots — this file is the shared part. Generalised from the two existing
-CLAUDE.md files (rector-src, symplify/phpstan-rules), 2026-06-13.
+from the project conventions slots — this file is the shared part.
 
 ### Language & types
 
