@@ -20,7 +20,3 @@ always-loaded baseline that applies either way.)
   naming a class that isn't in the diff reads as a hallucination.)
 - **Small and cheap to verify.** Scale caution to blast radius; prefer the smallest obviously-correct
   change; a one-command repro beats prose.
-
-Several of these are increasingly **gate-enforced**, not just prose — see the house-style guideline's
-enforcement note and the `symplify/phpstan-rules` set (the soft guidance here mirrors the hard rules
-there).

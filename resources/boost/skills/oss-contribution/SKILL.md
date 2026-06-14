@@ -88,6 +88,33 @@ tables or link-walls in maintainer-facing text unless asked.
 Quick test before handing off: would someone who doesn't read code understand what this delivers, and
 could the summary be reused almost verbatim in release notes? If not, rewrite.
 
+## Replies and comments (also drafted for the human)
+
+Review replies and issue comments are maintainer-facing prose too — kernel #5 applies (draft, the human
+posts). And keep them **short and human**, because a long AI comment is precisely the slop maintainers
+have called out — it raises their cost-to-read, not your credibility:
+
+- **One point per comment.** Answer what was asked; don't re-explain the whole PR or pre-empt questions
+  nobody raised. Three review threads → three short replies, not one essay.
+- **No walls of text, tables, or link-walls** in a thread. If a reply needs a heading and a bullet
+  list, it's too long for a PR comment — cut it, or move the detail into the code or commit message.
+- **Concede fast.** "Good catch — fixed in `<sha>`" beats a paragraph defending the original. If you
+  disagree, say so in a sentence or two with the reason, then let the maintainer decide.
+
+## While a PR is open (under review)
+
+Before pushing anything to an open PR, **re-check its state first** — `git fetch` the target and
+re-read the PR: is it still open, did the maintainer comment, approve, merge, or move the base branch?
+Pushing onto a stale picture is how an agent ends up "fixing" something already merged, or talking past
+a reply that is already there.
+
+- **About to push changes that move what the reviewer is looking at?** Convert the PR to **draft**
+  first (a human action, like everything PR-state here) so the maintainer doesn't spend a review on a
+  moving target; mark it ready again — also via the human — once it has settled. A small fixup the
+  reviewer explicitly asked for is fine to push as-is; a rewrite mid-review is not.
+- **Never force-push under review without a one-line reason** (kernel #4) — it discards the review
+  history the maintainer is part-way through.
+
 ## What this skill never does
 
 Open / merge / mark-ready a PR for the human; request reviewers; post comments or replies to

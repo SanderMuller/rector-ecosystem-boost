@@ -5,6 +5,24 @@ All notable changes to `sandermuller/rector-ecosystem-boost` will be documented 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+
+- **`oss-contribution` skill — comment discipline + open-PR etiquette.** A "Replies and comments"
+  section: review replies and issue comments are drafted for the human and kept short (one point per
+  comment, no walls of text / tables / link-walls, concede fast) — a long AI comment is the slop
+  maintainers call out. A "While a PR is open" section: re-check the PR's state (`git fetch`, re-read)
+  before pushing to it, and convert the PR to draft before pushing changes that move what the reviewer
+  is looking at.
+
+### Changed
+
+- **`pr-contribution` guideline** — dropped the closing "increasingly gate-enforced … `symplify/phpstan-rules`"
+  sentence. It named an external repo that can drift and didn't accurately describe the list it was
+  attached to (these are human-judgment conventions, not gate-checkable). Enforcement nuance already
+  lives, repo-aware, in the house-style guideline's enforcement note.
+
 ## v1.0.0 - 2026-06-14
 
 <!-- verified-sha: 762aa0ef02e264999d4bbe8be25b0b9982301cfe -->
